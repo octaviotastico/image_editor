@@ -6,7 +6,7 @@ import { Platform,
          ImageBackground
         } from 'react-native';
 
-export default class App extends React.Component {
+class App extends React.Component {
   render() {
     return (
       <ImageBackground></ImageBackground>
@@ -17,3 +17,5 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
 
 });
+
+export default App
