@@ -4,14 +4,14 @@
 
 ##### Basic functions:
 
-· Crop
-· Rotate
-· Flip
-· Bright
-· Contrast
-· Temperature
-· Saturation
-· Vignette
+* Crop
+* Rotate
+* Flip
+* Bright
+* Contrast
+* Temperature
+* Saturation
+* Vignette
 
 ##### Aesthetic functions:
 
