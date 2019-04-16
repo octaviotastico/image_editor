@@ -15,14 +15,14 @@
 
 ##### Aesthetic functions:
 
-· **Moire**:
+* **Moire**:
 
 >A pattern old TV's used to show a lot
 >when an image with lines gets small in
 >screen.
 >Don't know the algorithm, need research
 
-· **Dithering**:
+* **Dithering**:
 
 >Will use Floyd-Steinberg dithering.
 >Using error difussion, and letting
@@ -30,7 +30,7 @@
 >he/she wants, and what precision
 >should the dithering have.
 
-· **RGB Shift**:	
+* **RGB Shift**:	
 
 >Will separate the image in two copies
 >like 3D films, but with:
@@ -41,31 +41,31 @@
 >it within a given offset, paint one
 >with in colorA and other with colorB
 
-· **Recursive Image**:
+* **Recursive Image**:
 
 >It will repeat the original image
 >in smaller ones, one inside the
 >other, creating a pseudo-loop
 
-· **Negative**:
+* **Negative**:
 
 >It will invert the colors
 
-· **Negative Glitch**:
+* **Negative Glitch**:
 
 >It will invert the colors but
 >it will glitch the screen (like
 >some parts would not be negative)
 >Probably just 1/2, or 2/3 of screen
 
-· **Cut Glitch**:
+* **Cut Glitch**:
 
 >It will choose a (probably random)
 >y1 and y2, and move it (with an offset)
 >to left or right (probably random too),
 >repeating the last pixel
 
-· **WinXP Glitch**:
+* **WinXP Glitch**:
 
 >It will choose a (probably random)
 >y1 and y2, or x1 and x2, and it will
@@ -73,7 +73,7 @@
 >strike camera when glitchs off the map
 >or Windows XP when a window left a trace
 
-· **Chromatic Aberration**:
+* **Chromatic Aberration**:
 
 >This effect is made by low quality lenses
 >Will simulate ir by shifting every channel
@@ -84,11 +84,11 @@
 >leaving the original (with the green values)
 >intact.
 
-· **Pixelate**:
+* **Pixelate**:
 
 >Just pixelates an image
 
-· **Bad TV Signal**:
+* **Bad TV Signal**:
 
 >It will create 'waves' by selecting and
 >y value, and offsetting it by drawing the
@@ -96,12 +96,12 @@
 >to the original image.
 >Pixel loss by painting it to black
 
-· **Stickers**:
+* **Stickers**:
 
 >Adding images on top of the original
 >or edited image, like PC's, w95 icons, etc.
 
-· **Filters**:
+* **Filters**:
 
 >Normal filters, and things like 'moire'
 >that converts the image to black and
