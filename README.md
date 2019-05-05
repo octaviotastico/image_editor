@@ -65,7 +65,7 @@
 * **Chromatic Aberration**: ✗    
 
 > This effect is made by low quality lenses.    
-> Will simulate ir by shifting every channel (Red, Green, Blue).    
+> Will simulate it by shifting every channel (Red, Green, Blue).    
 > Make two copies of the image, leave copy1 only with channel Red, and other only with channel Blue, and move it with the offset leaving the original (with the green values) intact.    
 
 * **Pixelate**: ✗    

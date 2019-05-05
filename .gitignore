@@ -15,3 +15,16 @@ yarn-error.log
 
 # Visual Studio
 .vscode
+
+.watchmanconfig
+
+.flowconfig
+
+.buckconfig
+
+babel.config.js
+
+metro.config.js
+
+yarn.lock
+
