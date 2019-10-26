@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import { Text,
-         View,
-         ImageBackground
-        } from 'react-native';
+import { Button, Text, View, ImageBackground } from 'react-native';
 import MenuItem from '../components/MenuItems';
 import Styles from './HomeScreenStyles'
 
@@ -12,13 +9,17 @@ class HomeScreen extends Component {
   //  title: 'HomeScreen'
   //};
 
+  pinchila() {
+    alert('momento dou')
+  }
+
   render() {
 
     return (
       <ImageBackground
-
-        // source={require("../assets/images/background.png")}
-        style={Styles.container}>
+        source={require("../assets/images/background.png")}
+        style={Styles.container}
+      >
 
         <View style={Styles.bigView}>
 
@@ -27,8 +28,13 @@ class HomeScreen extends Component {
           </View>
 
           <View style={Styles.menuView}>
-            {/* <MenuItem itemImage={require("../assets/images/icons/camera.png")} /> */}
-            {/* <MenuItem itemImage={require("../assets/images/icons/galery.png")} /> */}
+            <Button
+              outline
+              title='Take Camera Photo'
+              onPress={() => this.pinchila()}
+            />
+            <MenuItem itemImage={require("../assets/images/icons/camera.png")} />
+            <MenuItem itemImage={require("../assets/images/icons/galery.png")} />
           </View>
 
         </View>
