@@ -17,7 +17,7 @@ class HomeScreen extends Component {
     return (
       <ImageBackground
 
-        source={require("../images/background.png")}
+        // source={require("../assets/images/background.png")}
         style={Styles.container}>
 
         <View style={Styles.bigView}>
@@ -27,8 +27,8 @@ class HomeScreen extends Component {
           </View>
 
           <View style={Styles.menuView}>
-            <MenuItem itemImage={require("../images/icons/camera.png")} />
-            <MenuItem itemImage={require("../images/icons/galery.png")} />
+            {/* <MenuItem itemImage={require("../assets/images/icons/camera.png")} /> */}
+            {/* <MenuItem itemImage={require("../assets/images/icons/galery.png")} /> */}
           </View>
 
         </View>
