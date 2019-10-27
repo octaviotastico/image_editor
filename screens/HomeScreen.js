@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Button, Text, View, ImageBackground } from 'react-native';
-import MenuItem from '../components/MenuItems';
-import Styles from './HomeScreenStyles'
+import { Text, View, Image, ImageBackground, TouchableHighlight } from 'react-native';
+import Styles from '../assets/styles/HomeScreenStyles';
 
 class HomeScreen extends Component {
 
@@ -28,13 +27,30 @@ class HomeScreen extends Component {
           </View>
 
           <View style={Styles.menuView}>
-            <Button
-              outline
-              title='Take Camera Photo'
+            <TouchableHighlight
               onPress={() => this.pinchila()}
-            />
-            <MenuItem itemImage={require("../assets/images/icons/camera.png")} />
-            <MenuItem itemImage={require("../assets/images/icons/galery.png")} />
+              style={Styles.buttons}
+            >
+              <>
+              <Image
+                style={Styles.imageButtons}
+                source={require('../assets/images/icons/Camera.png')}
+              />
+              <Text style={Styles.textButtons}>C A M E R A</Text>
+              </>
+            </TouchableHighlight>
+            <TouchableHighlight
+              onPress={() => this.pinchila()}
+              style={Styles.buttons}
+            >
+              <>
+              <Image
+                style={Styles.imageButtons}
+                source={require('../assets/images/icons/Photos.png')}
+              />
+              <Text style={Styles.textButtons}>G A L E R Y</Text>
+              </>
+            </TouchableHighlight>
           </View>
 
         </View>
