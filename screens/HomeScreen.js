@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Text, View, Image, ImageBackground, TouchableHighlight } from 'react-native';
+import { Text, View, Image, ImageBackground, TouchableHighlight, TouchableOpacity, PermissionsAndroid } from 'react-native';
 import Styles from '../assets/styles/HomeScreenStyles';
+import ExpoCamera from '../components/ExpoCamera';
 
 class HomeScreen extends Component {
 
@@ -32,11 +33,11 @@ class HomeScreen extends Component {
               style={Styles.buttons}
             >
               <>
-              <Image
-                style={Styles.imageButtons}
-                source={require('../assets/images/icons/Camera.png')}
-              />
-              <Text style={Styles.textButtons}>C A M E R A</Text>
+                <Image
+                  style={Styles.imageButtons}
+                  source={require('../assets/images/icons/Camera.png')}
+                />
+                <Text style={Styles.textButtons}>C A M E R A</Text>
               </>
             </TouchableHighlight>
             <TouchableHighlight
@@ -44,14 +45,16 @@ class HomeScreen extends Component {
               style={Styles.buttons}
             >
               <>
-              <Image
-                style={Styles.imageButtons}
-                source={require('../assets/images/icons/Photos.png')}
-              />
-              <Text style={Styles.textButtons}>G A L E R Y</Text>
+                <Image
+                  style={Styles.imageButtons}
+                  source={require('../assets/images/icons/Photos.png')}
+                />
+                <Text style={Styles.textButtons}>G A L E R Y</Text>
               </>
             </TouchableHighlight>
           </View>
+
+          <ExpoCamera />
 
         </View>
 

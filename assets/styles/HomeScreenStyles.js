@@ -35,13 +35,19 @@ export default Styles = StyleSheet.create({
 
   // Camera and Galery buttons view
   menuView: {
-    flexDirection: 'row'
+    flexWrap: 'nowrap',
+    flexDirection: 'row',
+    alignSelf: 'center',
+    marginTop: 230
   },
 
   // Camera and Galery buttons
   buttons: {
     backgroundColor: 'rgba(255, 255, 255, .1)',
     borderColor: '#ffffffff',
+    flexWrap: 'nowrap',
+    marginRight: 10,
+    marginLeft: 10,
     borderWidth: 2,
     padding: 10,
     height: 70,
@@ -52,12 +58,13 @@ export default Styles = StyleSheet.create({
   imageButtons: {
     tintColor: '#ffffffff',
     height: '100%',
-    width: '100%'
+    width: '100%',
   },
 
   // Camera and Galery text
   textButtons: {
+    textAlign: 'center',
     color: '#ffffffff',
-    width: '100%'
+    marginTop: 10
   }
 });
