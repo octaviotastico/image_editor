@@ -7,31 +7,23 @@ class HomeScreen extends Component {
 
   static navigationOptions = { header: null };
 
-  state = {
-    image: null,
-  };
-
   cameraButton() {
     this.props.navigation.navigate('Camera')
   }
 
   async galeryButton() {
     let result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
       allowsEditing: true,
       quality: 1
-    });
-
-    console.log(result);
+    })
 
     if (!result.cancelled) {
-      this.setState({ image: result.uri });
+      this.props.navigation.navigate('Edit', { img: result })
     }
   }
 
   render() {
-
-    let { image } = this.state;
 
     return (
       <ImageBackground
