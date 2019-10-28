@@ -5,13 +5,11 @@ import { createStackNavigator } from 'react-navigation-stack';
 
 import HomeScreen from './screens/HomeScreen';
 import CameraScreen from './screens/CameraScreen';
-import Gallery from './components/Gallery';
 import Styles from './assets/styles/AppStyles.js';
 
 const StackNavigator = createStackNavigator({
     Home: HomeScreen,
     Camera: CameraScreen,
-    Gallery: Gallery
   },
   {
     initialRouteName: 'Home',

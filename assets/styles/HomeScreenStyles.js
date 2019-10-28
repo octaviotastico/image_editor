@@ -25,10 +25,10 @@ export default Styles = StyleSheet.create({
   mainTitle: {
     backgroundColor: 'rgba(255, 255, 255, .1)',
     borderColor: '#ffffffff',
+    color: '#ffffffff',
     paddingRight: 40,
     paddingLeft: 40,
     borderWidth: 2,
-    color: '#ffffffff',
     fontSize: 28,
     padding: 20
   },

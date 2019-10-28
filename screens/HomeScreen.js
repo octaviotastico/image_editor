@@ -1,23 +1,37 @@
 import React, { Component } from 'react';
 import { Text, View, Image, ImageBackground, TouchableHighlight, TouchableOpacity, PermissionsAndroid } from 'react-native';
+import * as ImagePicker from 'expo-image-picker';
 import Styles from '../assets/styles/HomeScreenStyles';
 
 class HomeScreen extends Component {
 
   static navigationOptions = { header: null };
-  // static navigationOptions = {
-  //  title: 'HomeScreen'
-  // };
+
+  state = {
+    image: null,
+  };
 
   cameraButton() {
     this.props.navigation.navigate('Camera')
   }
 
-  galeryButton() {
-    this.props.navigation.navigate('Gallery')
+  async galeryButton() {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      quality: 1
+    });
+
+    console.log(result);
+
+    if (!result.cancelled) {
+      this.setState({ image: result.uri });
+    }
   }
 
   render() {
+
+    let { image } = this.state;
 
     return (
       <ImageBackground
