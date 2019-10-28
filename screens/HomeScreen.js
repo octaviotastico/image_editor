@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
 import { Text, View, Image, ImageBackground, TouchableHighlight, TouchableOpacity, PermissionsAndroid } from 'react-native';
 import Styles from '../assets/styles/HomeScreenStyles';
-import ExpoCamera from '../components/ExpoCamera';
 
 class HomeScreen extends Component {
 
-  //static navigationOptions = {
+  static navigationOptions = { header: null };
+  // static navigationOptions = {
   //  title: 'HomeScreen'
-  //};
+  // };
 
-  pinchila() {
+  cameraButton() {
+    alert('momento dou')
+    this.props.navigation.navigate('Camera')
+  }
+
+  galeryButton() {
     alert('momento dou')
   }
 
@@ -29,7 +34,7 @@ class HomeScreen extends Component {
 
           <View style={Styles.menuView}>
             <TouchableHighlight
-              onPress={() => this.pinchila()}
+              onPress={() => this.cameraButton()}
               style={Styles.buttons}
             >
               <>
@@ -41,7 +46,7 @@ class HomeScreen extends Component {
               </>
             </TouchableHighlight>
             <TouchableHighlight
-              onPress={() => this.pinchila()}
+              onPress={() => this.galeryButton()}
               style={Styles.buttons}
             >
               <>
@@ -53,8 +58,6 @@ class HomeScreen extends Component {
               </>
             </TouchableHighlight>
           </View>
-
-          <ExpoCamera />
 
         </View>
 

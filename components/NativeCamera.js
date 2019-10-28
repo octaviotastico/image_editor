@@ -4,89 +4,58 @@ import { Camera, Permissions } from 'expo'
 import { Header, Item, Icon, Input } from 'native-base'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 
-class CameraComponent extends Component {
-    state = {
-        hasCameraPermission: null,
-        type: Camera.Constants.Type.back
+class NativeCamera extends Component {
+  state = {
+    hasCameraPermission: null,
+    type: Camera.Constants.Type.back
+  }
+
+  async componentWillMount() {
+    const { status } = await Permissions.askAsync(Permissions.CAMERA);
+    this.setState({ hasCameraPermission: status === 'granted' })
+  }
+
+  render() {
+    const { hasCameraPermission } = this.state;
+    if (hasCameraPermission === null) {
+      return <View />
+    } else if (hasCameraPermission === false) {
+      return <Text>No access to camera</Text>;
+    } else {
+      return (
+        <View style={{ flex: 1 }}>
+          <Camera style={{ flex: 1 }} type={this.state.type}>
+            <View
+              style={{
+                flex: 1,
+                backgroundColor: 'transparent',
+                flexDirection: 'row',
+              }}>
+              <TouchableOpacity
+                style={{
+                flex: 0.1,
+                alignSelf: 'flex-end',
+                alignItems: 'center',
+                }}
+                onPress={() => {
+                this.setState({
+                  type: (this.state.type === Camera.Constants.Type.back) ? Camera.Constants.Type.front : Camera.Constants.Type.back });
+              }}>
+                <Text style={{ fontSize: 18, marginBottom: 10, color: 'white' }}> Flip </Text>
+              </TouchableOpacity>
+            </View>
+          </Camera>
+        </View>
+      );
     }
-
-    async componentWillMount() {
-        const { status } = await Permissions.askAsync(Permissions.CAMERA);
-        this.setState({ hasCameraPermission: status === 'granted' })
-    }
-
-    render() {
-        const { hasCameraPermission } = this.state
-        if (hasCameraPermission === null) {
-            return <View />
-        } else if (hasCameraPermission === false) {
-            return <Text> No access to camera</Text>
-        } else {
-            return (
-                <View style={{ flex: 1 }}>
-                    <Camera style={{ flex: 1, justifyContent: 'space-between' }} type={this.state.type} >
-                        <Header searchBar rounded
-                            style={{
-                                position: 'absolute', backgroundColor: 'transparent',
-                                left: 0, top: 0, right: 0, zIndex: 100, alignItems: 'center'
-                            }}
-                        >
-                            <View style={{ flexDirection: 'row', flex: 4 }}>
-                                <Icon name="logo-snapchat" style={{ color: 'white' }} />
-                                <Item style={{ backgroundColor: 'transparent' }}>
-                                    <Icon name="search" style={{ color: 'white', fontSize: 24, fontWeight: 'bold' }}></Icon>
-
-                                    <Input
-                                        placeholder="Search"
-                                        placeholderTextColor="white"
-                                    />
-
-
-                                </Item>
-                            </View>
-
-                            <View style={{ flexDirection: 'row', flex: 2, justifyContent: 'space-around' }}>
-                                <Icon name="flash" style={{ color: 'white', fontWeight: 'bold' }} />
-                                <Icon
-                                    onPress={() => {
-                                        this.setState({
-                                            tios-ype: this.state.type === Camera.Constants.Type.back ?
-                                                Camera.Constants.Type.front :
-                                                Camera.Constants.Type.back
-                                        })
-                                    }}
-                                    name="reverse-camera" style={{ color: 'white', fontWeight: 'bold' }} />
-                            </View>
-                        </Header>
-
-                        <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 10, marginBottom: 15, alignItems: 'flex-end' }}>
-                            <MaterialCommunityIcons name="message-reply"
-                                style={{ color: 'white', fontSize: 36 }}
-                            ></MaterialCommunityIcons>
-
-                            <View style={{ alignItems: 'center' }}>
-                                <MaterialCommunityIcons name="circle-outline"
-                                    style={{ color: 'white', fontSize: 100 }}
-                                ></MaterialCommunityIcons>
-                                <Icon name="images" style={{ color: 'white', fontSize: 36 }} />
-                            </View>
-                            <MaterialCommunityIcons name="google-circles-communities"
-                                style={{ color: 'white', fontSize: 36 }}
-                            ></MaterialCommunityIcons>
-
-                        </View>
-                    </Camera>
-                </View>
-            )
-        }
-    }
+  }
 }
-export default CameraComponent;
+export default NativeCamera;
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
-    }
+  container: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center'
+  }
 });

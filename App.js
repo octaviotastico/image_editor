@@ -1,23 +1,25 @@
 import React from 'react';
+import { View } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import { View } from 'react-native';
+
 import HomeScreen from './screens/HomeScreen';
+import CameraScreen from './screens/CameraScreen';
 import Styles from './assets/styles/AppStyles.js';
 
-const StackNavigator = createStackNavigator ({
-  Home: {
-    screen: HomeScreen
+const StackNavigator = createStackNavigator({
+    Home: HomeScreen,
+    Camera: CameraScreen,
+  },
+  {
+    initialRouteName: 'Home',
   }
-});
+);
 
-const Container = createAppContainer(StackNavigator);
-
+const AppContainer = createAppContainer(StackNavigator);
 export default function App() {
   return (
-    <View style={Styles.container}>
-      <HomeScreen />
-    </View>
+    <AppContainer style={Styles.container} />
   );
 }
 
