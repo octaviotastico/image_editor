@@ -10,12 +10,11 @@ class HomeScreen extends Component {
   // };
 
   cameraButton() {
-    alert('momento dou')
     this.props.navigation.navigate('Camera')
   }
 
   galeryButton() {
-    alert('momento dou')
+    this.props.navigation.navigate('Gallery')
   }
 
   render() {
