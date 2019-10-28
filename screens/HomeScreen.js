@@ -54,7 +54,7 @@ class HomeScreen extends Component {
                   style={Styles.imageButtons}
                   source={require('../assets/images/icons/Photos.png')}
                 />
-                <Text style={Styles.textButtons}>G A L E R Y</Text>
+                <Text style={Styles.textButtons}>G A L L E R Y</Text>
               </>
             </TouchableHighlight>
           </View>
