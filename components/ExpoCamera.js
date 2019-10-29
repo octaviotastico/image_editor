@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
 import { Image, Text, View, TouchableHighlight } from 'react-native';
-import * as Permissions from 'expo-permissions';
-import { Camera } from 'expo-camera';
 import Styles from '../assets/styles/CameraScreenStyles'
-import { Button } from 'native-base';
+import * as Permissions from 'expo-permissions';
 import { Slider } from 'react-native-elements';
+import { Camera } from 'expo-camera';
 
 export default class ExpoCamera extends Component {
   state = {
-    hasCameraPermission: null,
-    cam: 0, // 0:Type.front, 1:Type.back
-    sliderFlash: 0, // 0:off, 1:on, 2:auto, 3:torch
+    cam: 0,
+    zoom: 0,
+    sliderFlash: 0,
+    showZoomSlider: false,
     showFlashSlider: false,
+    hasCameraPermission: null,
+    
     autoFocus: Camera.Constants.AutoFocus, // on, off, focusDepht
-    zoom: Camera.Constants.zoom, // 0 to 1
     whiteBalance: Camera.Constants.WhiteBalance, // auto, sunny, cloudy, shadow, fluorescent, incandescent
     videoStabilizationMode: Camera.Constants.VideoStabilization,
     quality: Camera.Constants.VideoQuality,
@@ -40,10 +41,17 @@ export default class ExpoCamera extends Component {
     this.setState({showFlashSlider:!this.state.showFlashSlider})
   }
 
+  showZoomSlider() {
+    this.setState({showZoomSlider:!this.state.showZoomSlider})
+  }
+
   changeFlash(sliderVal) {
     this.setState({flash:sliderVal});
   }
 
+  changeZoom(sliderVal) {
+    this.setState({zoom:sliderVal});
+  }
   render() {
     const { hasCameraPermission } = this.state;
     if (hasCameraPermission === null) {
@@ -60,7 +68,8 @@ export default class ExpoCamera extends Component {
           style={Styles.cam}
           type={this.state.cam}
           flashMode={this.state.flash}
-
+          zoom={this.state.zoom}
+          ratio='4:3'
         />
 
         {/*////////////////// POPUP MENU /////////////////////*/}
@@ -74,6 +83,16 @@ export default class ExpoCamera extends Component {
               minimumValue={0}
               maximumValue={3}
               step={1}
+            />
+          }
+
+          {
+            this.state.showZoomSlider &&
+            <Slider
+              style={{ flex: 0.9, alignSelf: 'center' }}
+              onValueChange={v => this.changeZoom(v)}
+              minimumValue={0}
+              maximumValue={1}
             />
           }
         </View>
@@ -93,6 +112,13 @@ export default class ExpoCamera extends Component {
             <Image
               style={Styles.imageButtons}
               source={require('../assets/images/icons/Flash.png')}
+            />
+          </TouchableHighlight>
+
+          <TouchableHighlight onPress={() => this.showZoomSlider()}>
+            <Image
+              style={Styles.imageButtons}
+              source={require('../assets/images/icons/Zoom.png')}
             />
           </TouchableHighlight>
 

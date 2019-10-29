@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Text, View, Image, ImageBackground, TouchableHighlight, TouchableOpacity } from 'react-native';
 import Styles from '../assets/styles/CameraScreenStyles';
 import ExpoCamera from '../components/ExpoCamera';
 

@@ -9,6 +9,7 @@ export default Styles = StyleSheet.create({
   // Image preview container
   tools: {
     flexDirection: 'row',
+    backgroundColor: '#aaaaaa',
     justifyContent: 'center',
     alignContent: 'center',
     alignItems: 'center',
@@ -18,7 +19,6 @@ export default Styles = StyleSheet.create({
   // Tools images
   imageButtons: {
     // tintColor: '#ffffffff',
-    backgroundColor: 'transparent',
     height: 50,
     width: 50,
   }
