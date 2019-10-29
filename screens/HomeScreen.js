@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, Image, ImageBackground, TouchableHighlight, TouchableOpacity, PermissionsAndroid } from 'react-native';
+import { Text, View, Image, ImageBackground, TouchableHighlight } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import Styles from '../assets/styles/HomeScreenStyles';
 

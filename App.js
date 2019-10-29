@@ -27,6 +27,8 @@ export default function App() {
 
 /*
   Icons made by:
+    https://www.flaticon.com/authors/bqlqn
+    https://www.flaticon.com/authors/fjstudio
     https://www.flaticon.com/authors/smashicons
     https://www.flaticon.com/authors/photo3idea-studio
 */
